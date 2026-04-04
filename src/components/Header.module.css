@@ -1,0 +1,413 @@
+/* Modern Navbar */
+.navbar {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  padding: 8px 0;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Modern Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  position: relative;
+  z-index: 1001;
+}
+
+.logoIcon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #D4AF37, #B8960C);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logoIcon {
+  transform: scale(1.05);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logoMain {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #D4AF37;
+  letter-spacing: -0.5px;
+}
+
+.logoSub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #1e1a24;
+  letter-spacing: 1px;
+}
+
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1e1a24;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 50px;
+}
+
+.navLink i {
+  font-size: 1rem;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.navLink:hover {
+  color: #D4AF37;
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.navLink:hover i {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.navLink.active {
+  color: #D4AF37;
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.navLink.active i {
+  opacity: 1;
+  color: #D4AF37;
+}
+
+.navIndicator {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: #D4AF37;
+  border-radius: 3px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 20px;
+    opacity: 1;
+  }
+}
+
+/* Right Section */
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navCta {
+  background: linear-gradient(135deg, #D4AF37, #B8960C);
+  color: white;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.navCta i {
+  font-size: 0.9rem;
+}
+
+.navCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Modern Hamburger Menu */
+.mobileToggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  position: relative;
+}
+
+.hamburger {
+  width: 24px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 2.5px;
+  width: 100%;
+  background: #D4AF37;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.mobileToggle.active .hamburger span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.mobileToggle.active .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileToggle.active .hamburger span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* Mobile Overlay */
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Desktop Hover Effects */
+@media (min-width: 769px) {
+  .navLink {
+    position: relative;
+  }
+  
+  .navLink::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #D4AF37;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+  
+  .navLink:hover::before {
+    width: 30px;
+  }
+  
+  .navLink.active::before {
+    width: 30px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .navbar {
+    padding: 10px 0;
+  }
+  
+  .logoIcon {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+  
+  .logoMain {
+    font-size: 1rem;
+  }
+  
+  .logoSub {
+    font-size: 0.6rem;
+  }
+  
+  .navCta span {
+    display: none;
+  }
+  
+  .navCta {
+    padding: 10px;
+    border-radius: 50%;
+  }
+  
+  .navCta i {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .navLinks {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    padding: 80px 24px 30px;
+    gap: 8px;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .navLinks.active {
+    display: flex;
+    right: 0;
+  }
+  
+  .navLink {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+    justify-content: flex-start;
+    border-radius: 12px;
+  }
+  
+  .navLink i {
+    width: 24px;
+    font-size: 1.1rem;
+  }
+  
+  .navLink.active {
+    background: rgba(212, 175, 55, 0.1);
+  }
+  
+  .navIndicator {
+    display: none;
+  }
+  
+  .mobileToggle {
+    display: block;
+  }
+}
+
+/* Tablet Responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .navLinks {
+    gap: 4px;
+  }
+  
+  .navLink {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .navCta {
+    padding: 8px 20px;
+  }
+}
+
+/* Update logo icon styles to accommodate image */
+.logoIcon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #D4AF37, #B8960C);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+/* Add logo image styles */
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* If you want to keep the emoji as fallback, you can keep the span */
+.logoIcon span {
+  font-size: 24px;
+}
+
+/* Adjust for mobile */
+@media (max-width: 768px) {
+  .logoIcon {
+    width: 38px;
+    height: 38px;
+  }
+}
