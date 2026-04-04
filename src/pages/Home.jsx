@@ -14,6 +14,18 @@ export default function Home() {
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95])
   
+  // Fix mobile overflow on mount
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      document.body.style.overflowX = 'hidden'
+      document.documentElement.style.overflowX = 'hidden'
+    }
+    return () => {
+      document.body.style.overflowX = ''
+      document.documentElement.style.overflowX = ''
+    }
+  }, [])
+
   const banners = [
     {
       id: 1,
@@ -128,8 +140,8 @@ export default function Home() {
   }
 
   return (
-    <>
-      {/* Custom Cursor */}
+    <div className={styles.homeWrapper}>
+      {/* Custom Cursor - Hidden on mobile */}
       <motion.div
         className={styles.customCursor}
         animate={{
@@ -178,7 +190,7 @@ export default function Home() {
                 >
                   {banners[currentSlide].subtitle}
                 </motion.p>
-               
+                
               </div>
             </motion.div>
           </AnimatePresence>
@@ -572,6 +584,6 @@ export default function Home() {
           </div>
         </div>
       </motion.div>
-    </>
+    </div>
   )
 }

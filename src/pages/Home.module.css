@@ -19,6 +19,13 @@
   --border-gold: 1px solid rgba(212, 175, 55, 0.3);
 }
 
+/* Home Wrapper - Fix for mobile overflow */
+.homeWrapper {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
 /* Custom Cursor */
 .customCursor {
   position: fixed;
@@ -41,8 +48,10 @@
 /* Container */
 .container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 24px;
+  box-sizing: border-box;
 }
 
 /* Typography */
@@ -126,12 +135,14 @@
   height: 100vh;
   min-height: 700px;
   overflow: hidden;
+  width: 100%;
 }
 
 .heroCarousel {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .carouselSlide {
@@ -151,8 +162,10 @@
 .carouselContent {
   text-align: center;
   max-width: 900px;
+  width: 100%;
   padding: 0 20px;
   z-index: 2;
+  box-sizing: border-box;
 }
 
 .carouselBadge {
@@ -228,6 +241,7 @@
   overflow: hidden;
   border-top: var(--border-gold);
   border-bottom: var(--border-gold);
+  width: 100%;
 }
 
 .statsSection::before {
@@ -247,6 +261,7 @@
   text-align: center;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .statItem {
@@ -287,6 +302,8 @@
 .socialLinksSection {
   padding: 80px 0;
   background: var(--dark);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .socialLinksGrid {
@@ -295,6 +312,7 @@
   gap: 35px;
   max-width: 900px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .socialCard {
@@ -309,6 +327,8 @@
   border: var(--border-gold);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .socialCard::before {
@@ -328,6 +348,7 @@
 
 .socialCard i:first-child {
   font-size: 40px;
+  flex-shrink: 0;
 }
 
 .socialCard h3 {
@@ -348,6 +369,7 @@
   opacity: 0.7;
   transition: transform 0.3s ease;
   color: white;
+  flex-shrink: 0;
 }
 
 .socialCard:hover .fa-arrow-right {
@@ -369,6 +391,7 @@
 .sectionHeader {
   text-align: center;
   margin-bottom: 70px;
+  width: 100%;
 }
 
 .sectionBadge {
@@ -416,12 +439,15 @@
 .featuresSection {
   padding: 80px 0;
   background: var(--dark-lighter);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .featuresGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 35px;
+  width: 100%;
 }
 
 .featureCard {
@@ -434,6 +460,8 @@
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .featureCard::after {
@@ -502,6 +530,8 @@
 .highlightsSection {
   padding: 80px 0;
   background: var(--dark);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .highlightsGrid {
@@ -509,6 +539,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 70px;
   align-items: center;
+  width: 100%;
 }
 
 .highlightsContent h2 {
@@ -533,12 +564,14 @@
 .highlightsContent li i {
   color: var(--primary);
   font-size: 1.2rem;
+  flex-shrink: 0;
 }
 
 .highlightsStats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  width: 100%;
 }
 
 .statCard {
@@ -548,6 +581,8 @@
   border-radius: 20px;
   transition: all 0.3s ease;
   border: var(--border-gold);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .statCard:hover {
@@ -577,6 +612,8 @@
 .trainerSection {
   padding: 80px 0;
   background: var(--dark-lighter);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .trainerGrid {
@@ -584,6 +621,7 @@
   grid-template-columns: 350px 1fr;
   gap: 70px;
   align-items: start;
+  width: 100%;
 }
 
 .trainerPlaceholder {
@@ -596,6 +634,7 @@
   position: relative;
   overflow: hidden;
   border: var(--border-gold);
+  width: 100%;
 }
 
 .trainerPlaceholder img {
@@ -719,16 +758,20 @@
 .reviewsSection {
   padding: 80px 0;
   background: var(--dark);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .reviewsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 35px;
+  width: 100%;
 }
 
 .reviewCard {
   height: 100%;
+  width: 100%;
 }
 
 .reviewCardInner {
@@ -739,6 +782,8 @@
   transition: all 0.3s ease;
   height: 100%;
   border: var(--border-gold);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .reviewCard:hover .reviewCardInner {
@@ -791,6 +836,7 @@
   font-size: 1.3rem;
   font-weight: 800;
   color: var(--dark);
+  flex-shrink: 0;
 }
 
 .reviewerDetails h4 {
@@ -834,6 +880,7 @@
   overflow: hidden;
   border-top: var(--border-gold);
   border-bottom: var(--border-gold);
+  width: 100%;
 }
 
 .ctaSection::before {
@@ -895,6 +942,7 @@
   margin: 45px 0;
   position: relative;
   z-index: 1;
+  flex-wrap: wrap;
 }
 
 .contactPhone {
@@ -935,7 +983,7 @@
   box-shadow: 0 0 50px rgba(212, 175, 55, 0.6) !important;
 }
 
-/* Mobile Responsive */
+/* ==================== MOBILE RESPONSIVE FIXES ==================== */
 @media (max-width: 992px) {
   .container {
     padding: 0 20px;
@@ -951,52 +999,109 @@
 }
 
 @media (max-width: 768px) {
+  /* Global mobile fixes */
+  .homeWrapper {
+    overflow-x: hidden;
+  }
+  
+  .container {
+    padding: 0 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Hero section */
   .heroSection {
     height: 70vh;
     min-height: 550px;
   }
   
+  .carouselContent {
+    padding: 0 16px;
+  }
+  
   .carouselContent h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .carouselContent p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   
+  /* Stats grid */
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
+    gap: 20px;
   }
   
   .statNumber {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
   
+  .statNumber span {
+    font-size: 1.2rem;
+  }
+  
+  /* Social links */
   .socialLinksGrid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   
+  .socialCard {
+    padding: 20px 24px;
+  }
+  
+  .socialCard i:first-child {
+    font-size: 32px;
+  }
+  
+  .socialCard h3 {
+    font-size: 1rem;
+  }
+  
+  /* Features */
   .featuresGrid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   
+  .featureCard {
+    padding: 28px 20px;
+  }
+  
+  .featureCard h3 {
+    font-size: 1.2rem;
+  }
+  
+  /* Highlights */
   .highlightsGrid {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 40px;
+  }
+  
+  .highlightsContent h2 {
+    font-size: 1.8rem;
+  }
+  
+  .highlightsContent li {
+    font-size: 0.9rem;
   }
   
   .highlightsStats {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   
+  /* Trainer */
   .trainerGrid {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 40px;
+    gap: 30px;
   }
   
   .trainerInfo h3 {
+    font-size: 1.8rem;
     justify-content: center;
   }
   
@@ -1004,44 +1109,176 @@
     justify-content: center;
   }
   
-  .reviewsGrid {
-    grid-template-columns: 1fr;
+  .trainerPlaceholder {
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
   
+  /* Reviews */
+  .reviewsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .reviewCardInner {
+    padding: 25px 20px;
+  }
+  
+  .reviewText {
+    font-size: 0.85rem;
+  }
+  
+  /* CTA */
   .ctaContactInfo {
     flex-direction: column;
     align-items: center;
+    gap: 15px;
   }
   
+  .contactPhone {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  
+  .ctaSection h2 {
+    font-size: 1.6rem;
+    padding: 0 16px;
+  }
+  
+  .ctaSection p {
+    font-size: 0.9rem;
+    padding: 0 16px;
+  }
+  
+  /* Section headers */
+  .sectionHeader h2 {
+    font-size: 1.6rem;
+  }
+  
+  .sectionHeader p {
+    font-size: 0.85rem;
+    padding: 0 16px;
+  }
+  
+  /* Buttons */
   .heroButtons {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding: 0 16px;
   }
   
   .btnPrimary, .btnOutline {
     width: 100%;
     justify-content: center;
+    padding: 12px 24px;
+    box-sizing: border-box;
   }
   
-  .sectionHeader h2 {
-    font-size: 1.8rem;
+  /* Carousel dots */
+  .carouselDots {
+    bottom: 20px;
   }
   
-  .ctaSection h2 {
-    font-size: 1.8rem;
+  /* Stats section */
+  .statsSection {
+    padding: 50px 0;
+  }
+  
+  /* Features section */
+  .featuresSection {
+    padding: 50px 0;
+  }
+  
+  /* Highlights section */
+  .highlightsSection {
+    padding: 50px 0;
+  }
+  
+  /* Trainer section */
+  .trainerSection {
+    padding: 50px 0;
+  }
+  
+  /* Reviews section */
+  .reviewsSection {
+    padding: 50px 0;
+  }
+  
+  /* CTA section */
+  .ctaSection {
+    padding: 60px 0;
   }
 }
 
+/* Extra small devices */
 @media (max-width: 480px) {
+  .container {
+    padding: 0 12px !important;
+  }
+  
   .carouselContent h1 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   
   .statsGrid {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
   
-  .featureCard {
-    padding: 32px 24px;
+  .statNumber {
+    font-size: 1.8rem;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 1.4rem;
+  }
+  
+  .featureCard h3 {
+    font-size: 1.1rem;
+  }
+  
+  .featureCard p {
+    font-size: 0.85rem;
+  }
+  
+  .trainerInfo h3 {
+    font-size: 1.5rem;
+  }
+  
+  .trainerTitle {
+    font-size: 0.9rem;
+  }
+  
+  .reviewerInitial {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+  
+  .ctaBadge {
+    font-size: 0.7rem;
+    padding: 6px 16px;
+  }
+  
+  .contactPhone span {
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape mode fix */
+@media (max-width: 768px) and (orientation: landscape) {
+  .heroSection {
+    height: 100vh;
+    min-height: 400px;
+  }
+  
+  .carouselContent h1 {
+    font-size: 1.4rem;
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
