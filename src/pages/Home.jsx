@@ -8,6 +8,7 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
+  const [activeTab, setActiveTab] = useState('courses')
   const heroRef = useRef(null)
   
   const { scrollYProgress } = useScroll()
@@ -58,7 +59,8 @@ export default function Home() {
       rating: 5,
       text: "The 30 days course completely transformed my career! The airbrush techniques and bridal makeup training were exceptional. Now I'm running my own successful makeup studio.",
       course: "30 Days Advanced Course",
-      date: "March 2024"
+      date: "March 2024",
+      
     },
     {
       id: 2,
@@ -67,7 +69,8 @@ export default function Home() {
       rating: 5,
       text: "Sonali ma'am's teaching style is amazing! The practical exposure and one-on-one guidance helped me master professional techniques.",
       course: "Professional Makeup Course",
-      date: "February 2024"
+      date: "February 2024",
+      
     },
     {
       id: 3,
@@ -76,7 +79,18 @@ export default function Home() {
       rating: 5,
       text: "From zero to hero! I had no prior experience, but the step-by-step training made everything easy.",
       course: "Advanced Makeup Course",
-      date: "January 2024"
+      date: "January 2024",
+      
+    },
+    {
+      id: 4,
+      name: "Riya Mehta",
+      location: "Delhi",
+      rating: 5,
+      text: "Best decision of my life! The portfolio building and business strategies helped me start my own salon.",
+      course: "Bridal Makeup Masterclass",
+      date: "December 2023",
+      
     }
   ]
 
@@ -108,12 +122,102 @@ export default function Home() {
   }
 
   const features = [
-    { icon: "💄", title: "All Products Provided", desc: "Students only need to bring their brushes" },
-    { icon: "🎨", title: "Colour Wheel Knowledge", desc: "Master perfect shade selection" },
-    { icon: "✈️", title: "Airbrush Techniques", desc: "Advanced makeup technology training" },
-    { icon: "📱", title: "Social Media Training", desc: "Build your brand & grow online presence" },
-    { icon: "📸", title: "Photography Skills", desc: "Learn to click & present professionally" },
-    { icon: "⭐", title: "17+ Years Expertise", desc: "Learn directly from industry expert" }
+    { 
+      icon: "💄", 
+      title: "All Products Provided", 
+      desc: "Students only need to bring their brushes",
+      image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=300&fit=crop"
+    },
+    { 
+      icon: "🎨", 
+      title: "Colour Wheel Knowledge", 
+      desc: "Master perfect shade selection",
+      image: "/images/kit.jpeg"
+    },
+    { 
+      icon: "✈️", 
+      title: "Airbrush Techniques", 
+      desc: "Advanced makeup technology training",
+      image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=300&fit=crop"
+    },
+    { 
+      icon: "📱", 
+      title: "Social Media Training", 
+      desc: "Build your brand & grow online presence",
+      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=300&fit=crop"
+    },
+    { 
+      icon: "📸", 
+      title: "Photography Skills", 
+      desc: "Learn to click & present professionally",
+      image: "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=400&h=300&fit=crop"
+    },
+    { 
+      icon: "⭐", 
+      title: "17+ Years Expertise", 
+      desc: "Learn directly from industry expert",
+      image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&h=300&fit=crop"
+    }
+  ]
+
+  const courses = [
+    {
+      id: 1,
+      title: "Advanced Makeup Course",
+      duration: "30 Days",
+      
+      image: "/images/advance.jpeg",
+      features: ["Bridal Makeup", "Airbrush Techniques", "HD Makeup", "Hairstyling"],
+      level: "Professional",
+      popular: true,
+      students: "500+",
+      projects: "15+"
+    },
+    {
+      id: 2,
+      title: "Bridal Makeup Masterclass",
+      duration: "15 Days",
+      
+      image: "/images/bride.jpeg",
+      features: ["Traditional Bridal", "Modern Bridal", "Pre-Bridal Prep", "Draping"],
+      level: "Advanced",
+      popular: false,
+      students: "300+",
+      projects: "10+"
+    },
+    {
+      id: 3,
+      title: "Professional Hairstyling",
+      duration: "15 Days",
+      
+      image: "/images/hair.jpeg",
+      features: ["Bridal Hairstyles", "Party Hairstyles", "Braiding", "Updos"],
+      level: "Intermediate",
+      popular: false,
+      students: "200+",
+      projects: "12+"
+    },
+    {
+      id: 4,
+      title: "Airbrush & HD Makeup",
+      duration: "10 Days",
+      
+      image: "/images/hd.jpeg",
+      features: ["Airbrush Techniques", "Camera Makeup", "Film Makeup", "Special Effects"],
+      level: "Advanced",
+      popular: false,
+      students: "150+",
+      projects: "8+"
+    }
+  ]
+
+  const achievements = [
+    { number: "17+", label: "Years Experience", icon: "🏆" },
+    { number: "1000+", label: "Happy Students", icon: "👨‍🎓" },
+    { number: "500+", label: "Bridal Makeovers", icon: "👰" },
+    { number: "100%", label: "Placement Rate", icon: "💼" },
+    { number: "50+", label: "Expert Trainers", icon: "👩‍🏫" },
+    { number: "4.9", label: "Google Rating", icon: "⭐" }
   ]
 
   const containerVariants = {
@@ -190,7 +294,28 @@ export default function Home() {
                 >
                   {banners[currentSlide].subtitle}
                 </motion.p>
-                
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.6 }}
+                  className={styles.heroButtons}
+                >
+                  <Link 
+                    to="/contact" 
+                    className={styles.btnPrimary}
+                    onMouseEnter={() => setIsHovering(true)}
+                    onMouseLeave={() => setIsHovering(false)}
+                  >
+                    Book Your Seat <i className="fas fa-calendar-check"></i>
+                  </Link>
+                  <button 
+                    className={styles.btnOutline}
+                    onMouseEnter={() => setIsHovering(true)}
+                    onMouseLeave={() => setIsHovering(false)}
+                  >
+                    Download Brochure <i className="fas fa-download"></i>
+                  </button>
+                </motion.div>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -207,6 +332,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust Badges */}
+      <div className={styles.trustBadges}>
+        <div className={styles.container}>
+          <motion.div 
+            className={styles.badgesWrapper}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <span>✓ 5000+ Happy Students</span>
+            <span>✓ 100% Job Assistance</span>
+            <span>✓ Government Certified</span>
+            <span>✓ EMI Options Available</span>
+          </motion.div>
+        </div>
+      </div>
+
       {/* Stats Section */}
       <motion.div 
         className={styles.statsSection}
@@ -217,12 +360,7 @@ export default function Home() {
       >
         <div className={styles.container}>
           <div className={styles.statsGrid}>
-            {[
-              { number: "17", suffix: "+", label: "Years Experience", icon: "⭐" },
-              { number: "1000", suffix: "+", label: "Happy Students", icon: "🎓" },
-              { number: "100", suffix: "%", label: "Practical Training", icon: "💯" },
-              { number: "30", suffix: "", label: "Days Intensive", icon: "📅" }
-            ].map((stat, index) => (
+            {achievements.map((stat, index) => (
               <motion.div
                 key={index}
                 className={styles.statItem}
@@ -233,7 +371,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05, y: -5 }}
               >
                 <div className={styles.statIconGold}>{stat.icon}</div>
-                <div className={styles.statNumber}>{stat.number}<span>{stat.suffix}</span></div>
+                <div className={styles.statNumber}>{stat.number}</div>
                 <div className={styles.statLabel}>{stat.label}</div>
               </motion.div>
             ))}
@@ -285,7 +423,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Features Section */}
+      {/* Features Section with Images */}
       <div className={styles.featuresSection}>
         <div className={styles.container}>
           <motion.div
@@ -296,9 +434,9 @@ export default function Home() {
           >
             <span className={styles.sectionBadge}>
               <span className={styles.badgeGlow}></span>
-              What You'll Get
+              What Makes Us Different
             </span>
-            <h2>Everything You Need to Succeed</h2>
+            <h2>Everything You Need to <span className={styles.goldText}>Succeed</span></h2>
             <p>Comprehensive training designed to make you a professional makeup artist</p>
           </motion.div>
           <motion.div 
@@ -317,9 +455,11 @@ export default function Home() {
                 onMouseEnter={() => setIsHovering(true)}
                 onMouseLeave={() => setIsHovering(false)}
               >
-                <div className={styles.featureIconWrapper}>
-                  <div className={styles.featureIconGlow}></div>
-                  <div className={styles.featureIcon}>{f.icon}</div>
+                <div className={styles.featureImageWrapper}>
+                  <img src={f.image} alt={f.title} className={styles.featureImage} />
+                  <div className={styles.featureIconOverlay}>
+                    <div className={styles.featureIcon}>{f.icon}</div>
+                  </div>
                 </div>
                 <h3>{f.title}</h3>
                 <p>{f.desc}</p>
@@ -329,66 +469,79 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Course Highlights */}
-      <div className={styles.highlightsSection}>
+      {/* Popular Courses Section */}
+      <div className={styles.coursesSection}>
         <div className={styles.container}>
-          <div className={styles.highlightsGrid}>
-            <motion.div
-              className={styles.highlightsContent}
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, type: "spring", stiffness: 100 }}
-              viewport={{ once: true }}
-            >
-              <span className={styles.sectionBadge}>Course Curriculum</span>
-              <h2>Industry-Ready <span className={styles.goldText}>Training</span></h2>
-              <ul>
-                {[
-                  "Deep theoretical knowledge + extensive practical exposure",
-                  "All products provided (only brushes needed from students)",
-                  "Airbrush & Advanced Makeup Techniques",
-                  "Social Media & Photography Knowledge",
-                  "Learn directly from artist with 17 years experience"
-                ].map((item, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <i className="fas fa-crown"></i> {item}
-                  </motion.li>
-                ))}
-              </ul>
-              <Link to="/courses" className={styles.btnPrimary}>View Full Curriculum →</Link>
-            </motion.div>
-            <motion.div
-              className={styles.highlightsStats}
-              initial={{ opacity: 0, x: 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-            >
-              {[
-                { icon: "📅", title: "30 Days", desc: "Comprehensive Training" },
-                { icon: "💯", title: "100%", desc: "Practical Hands-on" },
-                { icon: "📜", title: "Certificate", desc: "Industry Recognized" }
-              ].map((stat, i) => (
-                <motion.div
-                  key={i}
-                  className={styles.statCard}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  onMouseEnter={() => setIsHovering(true)}
-                  onMouseLeave={() => setIsHovering(false)}
-                >
-                  <div className={styles.statIconGolden}>{stat.icon}</div>
-                  <h3>{stat.title}</h3>
-                  <p>{stat.desc}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
+          <motion.div
+            className={styles.sectionHeader}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className={styles.sectionBadge}>Popular Courses</span>
+            <h2>Choose Your <span className={styles.goldText}>Path to Success</span></h2>
+            <p>Industry-focused courses designed to make you a professional makeup artist</p>
+          </motion.div>
+
+          <motion.div 
+            className={styles.coursesGrid}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {courses.map((course, index) => (
+              <motion.div
+                key={course.id}
+                className={`${styles.courseCard} ${course.popular ? styles.popularCard : ''}`}
+                variants={itemVariants}
+                whileHover={{ y: -10 }}
+              >
+                {course.popular && (
+                  <div className={styles.popularBadge}>
+                    <i className="fas fa-fire"></i> Most Popular
+                  </div>
+                )}
+                <div className={styles.courseImageWrapper}>
+                  <img src={course.image} alt={course.title} className={styles.courseImage} />
+                  <div className={styles.courseLevel}>{course.level}</div>
+                </div>
+                <div className={styles.courseContent}>
+                  <h3>{course.title}</h3>
+                  <div className={styles.courseMeta}>
+                    <span><i className="fas fa-clock"></i> {course.duration}</span>
+                    <span><i className="fas fa-tag"></i> {course.price}</span>
+                  </div>
+                  <div className={styles.courseStats}>
+                    <span><i className="fas fa-users"></i> {course.students} Students</span>
+                    <span><i className="fas fa-project-diagram"></i> {course.projects} Projects</span>
+                  </div>
+                  <div className={styles.courseFeatures}>
+                    {course.features.map((feature, i) => (
+                      <span key={i} className={styles.courseFeature}>
+                        <i className="fas fa-check-circle"></i> {feature}
+                      </span>
+                    ))}
+                  </div>
+                  <Link to="/courses" className={styles.courseBtn}>
+                    View Details <i className="fas fa-arrow-right"></i>
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            className={styles.viewAllBtn}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <Link to="/courses" className={styles.btnOutline}>
+              View All Courses <i className="fas fa-arrow-right"></i>
+            </Link>
+          </motion.div>
         </div>
       </div>
 
@@ -438,8 +591,10 @@ export default function Home() {
                 <span>💄 16+ Years Experience</span>
                 <span>🌍 Certified International Artist</span>
                 <span>📍 Nagpur</span>
+                <span>🏆 Award Winning Trainer</span>
               </div>
               <p>With over 16 years of hands-on experience in the beauty industry, Sonali has transformed countless aspiring makeup enthusiasts into confident professionals. Her passion for teaching and eye for perfection makes every student industry-ready.</p>
+              <p>She has trained over 1000+ students who are now successful makeup artists, salon owners, and brand ambassadors. Her unique teaching methodology combines creativity with business acumen.</p>
               <div className={styles.trainerSocial}>
                 <a href="https://www.instagram.com/ss_beautyacademy_/" target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-instagram"></i> @ss_beautyacademy_
@@ -459,7 +614,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className={styles.sectionBadge}>Student Success Stories</span>
+            <span className={styles.sectionBadge}>Student Testimonials</span>
             <h2>What Our <span className={styles.goldText}>Students</span> Say</h2>
             <p>Join 1000+ successful makeup artists who started their journey with us</p>
           </motion.div>
@@ -490,8 +645,8 @@ export default function Home() {
                   </div>
                   <p className={styles.reviewText}>"{review.text}"</p>
                   <div className={styles.reviewerInfo}>
-                    <div className={styles.reviewerInitial}>
-                      {review.name.charAt(0)}
+                    <div className={styles.reviewerImage}>
+                      <img src={review.image} alt={review.name} />
                     </div>
                     <div className={styles.reviewerDetails}>
                       <h4>{review.name}</h4>
