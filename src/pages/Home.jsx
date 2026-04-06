@@ -257,28 +257,7 @@ export default function Home() {
                 >
                   {banners[currentSlide].subtitle}
                 </motion.p>
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.6 }}
-                  className={styles.heroButtons}
-                >
-                  <Link 
-                    to="/contact" 
-                    className={styles.btnPrimary}
-                    onMouseEnter={() => setIsHovering(true)}
-                    onMouseLeave={() => setIsHovering(false)}
-                  >
-                    Book Your Seat <i className="fas fa-calendar-check"></i>
-                  </Link>
-                  <button 
-                    className={styles.btnOutline}
-                    onMouseEnter={() => setIsHovering(true)}
-                    onMouseLeave={() => setIsHovering(false)}
-                  >
-                    Download Brochure <i className="fas fa-download"></i>
-                  </button>
-                </motion.div>
+                
               </div>
             </motion.div>
           </AnimatePresence>
