@@ -121,44 +121,7 @@ export default function Home() {
     setCurrentSlide(index)
   }
 
-  const features = [
-    { 
-      icon: "💄", 
-      title: "All Products Provided", 
-      desc: "Students only need to bring their brushes",
-      image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=300&fit=crop"
-    },
-    { 
-      icon: "🎨", 
-      title: "Colour Wheel Knowledge", 
-      desc: "Master perfect shade selection",
-      image: "/images/kit.jpeg"
-    },
-    { 
-      icon: "✈️", 
-      title: "Airbrush Techniques", 
-      desc: "Advanced makeup technology training",
-      image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=300&fit=crop"
-    },
-    { 
-      icon: "📱", 
-      title: "Social Media Training", 
-      desc: "Build your brand & grow online presence",
-      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=300&fit=crop"
-    },
-    { 
-      icon: "📸", 
-      title: "Photography Skills", 
-      desc: "Learn to click & present professionally",
-      image: "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=400&h=300&fit=crop"
-    },
-    { 
-      icon: "⭐", 
-      title: "17+ Years Expertise", 
-      desc: "Learn directly from industry expert",
-      image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&h=300&fit=crop"
-    }
-  ]
+ 
 
   const courses = [
     {
@@ -423,51 +386,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Features Section with Images */}
-      <div className={styles.featuresSection}>
-        <div className={styles.container}>
-          <motion.div
-            className={styles.sectionHeader}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <span className={styles.sectionBadge}>
-              <span className={styles.badgeGlow}></span>
-              What Makes Us Different
-            </span>
-            <h2>Everything You Need to <span className={styles.goldText}>Succeed</span></h2>
-            <p>Comprehensive training designed to make you a professional makeup artist</p>
-          </motion.div>
-          <motion.div 
-            className={styles.featuresGrid}
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {features.map((f, i) => (
-              <motion.div
-                className={styles.featureCard}
-                key={i}
-                variants={itemVariants}
-                whileHover={{ y: -15, transition: { duration: 0.2 } }}
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-              >
-                <div className={styles.featureImageWrapper}>
-                  <img src={f.image} alt={f.title} className={styles.featureImage} />
-                  <div className={styles.featureIconOverlay}>
-                    <div className={styles.featureIcon}>{f.icon}</div>
-                  </div>
-                </div>
-                <h3>{f.title}</h3>
-                <p>{f.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
+      
 
       {/* Popular Courses Section */}
       <div className={styles.coursesSection}>
