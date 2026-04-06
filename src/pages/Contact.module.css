@@ -1,38 +1,65 @@
-/* Contact Page CSS Module */
+/* Contact.module.css - Rose Pearl Light Theme (Matches Home & About Pages) */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --primary: #D4AF37;
-  --primary-dark: #B8960C;
-  --primary-light: #FFD700;
-  --dark: #0A0A0A;
-  --dark-lighter: #1A1A1A;
-  --gray-dark: #2A2A2A;
-  --gray: #3A3A3A;
-  --text-light: #FFFFFF;
-  --text-gray: #B0B0B0;
-  --gradient-gold: linear-gradient(135deg, #D4AF37, #FFD700, #D4AF37);
-  --gradient-dark: linear-gradient(135deg, #0A0A0A, #1A1A1A);
-  --gradient-card: linear-gradient(135deg, rgba(26,26,26,0.95), rgba(10,10,10,0.95));
-  --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
-  --shadow-dark: 0 10px 40px rgba(0,0,0,0.5);
-  --border-gold: 1px solid rgba(212, 175, 55, 0.3);
+  /* Light & Elegant Color Scheme - Same as Home & About Pages */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #FFF9F5;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #FFFDFB;
+  --bg-soft: #FDF7F4;
+  
+  --text-primary: #2C2C2C;
+  --text-secondary: #6B5B4F;
+  --text-tertiary: #A89A8E;
+  --text-light: #D4C5B5;
+  
+  --accent-rose: #D4A5A5;
+  --accent-rose-dark: #C48B8B;
+  --accent-rose-light: #F0D6D6;
+  --accent-gold: #E8C9A0;
+  --accent-gold-dark: #D4B07A;
+  --accent-blush: #F5D6D6;
+  --accent-peach: #FFE4D6;
+  --accent-mauve: #E8D0D0;
+  
+  --gradient-rose: linear-gradient(135deg, #D4A5A5 0%, #E8C9A0 100%);
+  --gradient-rose-light: linear-gradient(135deg, #F0D6D6 0%, #FFE4D6 100%);
+  --gradient-card: linear-gradient(135deg, #FFFFFF 0%, #FFF9F5 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,249,245,0.88) 100%);
+  
+  --shadow-sm: 0 4px 14px rgba(0,0,0,0.04), 0 2px 4px rgba(0,0,0,0.02);
+  --shadow-md: 0 8px 28px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.03);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.04);
+  --shadow-rose: 0 0 30px rgba(212,165,165,0.15);
+  --shadow-gold: 0 0 30px rgba(232,201,160,0.12);
+  
+  --border-light: 1px solid rgba(0,0,0,0.05);
+  --border-rose: 1px solid rgba(212,165,165,0.25);
+  --border-gold: 1px solid rgba(232,201,160,0.35);
+  
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+  
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
 /* Page Header */
 .pageHeader {
-  background: var(--gradient-dark);
+  background: var(--gradient-rose-light);
   padding: 100px 0 80px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-bottom: var(--border-gold);
+  border-bottom: var(--border-rose);
 }
 
 .pageHeader::before {
@@ -42,34 +69,35 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(212,175,55,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(212,165,165,0.1) 0%, transparent 70%);
 }
 
 .headerBadge {
   display: inline-block;
-  background: rgba(212, 175, 55, 0.15);
-  backdrop-filter: blur(10px);
+  background: rgba(212,165,165,0.85);
+  backdrop-filter: blur(4px);
   padding: 8px 24px;
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 24px;
-  border: var(--border-gold);
-  color: var(--primary);
+  border: none;
+  color: white;
+  font-family: var(--font-body);
 }
 
 .pageHeader h1 {
   font-size: 3.5rem;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, #FFFFFF, #D4AF37);
+  background: linear-gradient(135deg, #2C2C2C 0%, var(--accent-rose-dark) 60%, var(--accent-gold-dark) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading);
 }
 
 .goldText {
-  background: var(--gradient-gold);
+  background: var(--gradient-rose);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -77,8 +105,9 @@
 
 .pageHeader p {
   font-size: 1.2rem;
-  color: var(--text-gray);
+  color: var(--text-secondary);
   margin-bottom: 30px;
+  font-family: var(--font-body);
 }
 
 .headerStats {
@@ -93,14 +122,16 @@
   align-items: center;
   gap: 8px;
   padding: 8px 20px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-card);
   border-radius: 50px;
-  color: var(--text-gray);
+  color: var(--text-secondary);
   font-size: 0.9rem;
+  box-shadow: var(--shadow-sm);
+  border: var(--border-light);
 }
 
 .headerStat i {
-  color: var(--primary);
+  color: var(--accent-rose);
 }
 
 /* Section Header */
@@ -111,38 +142,39 @@
 
 .sectionBadge {
   display: inline-block;
-  background: rgba(212, 175, 55, 0.1);
-  color: var(--primary);
-  padding: 8px 22px;
+  background: var(--gradient-rose-light);
+  color: var(--accent-rose-dark);
+  padding: 6px 18px;
   border-radius: 50px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  margin-bottom: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 16px;
   letter-spacing: 1px;
-  border: var(--border-gold);
+  font-family: var(--font-body);
 }
 
 .sectionHeader h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, #FFFFFF, #D4AF37);
+  background: linear-gradient(135deg, #2C2C2C, var(--accent-rose-dark));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading);
 }
 
 .sectionHeader p {
-  color: var(--text-gray);
+  color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
   font-size: 1rem;
+  font-family: var(--font-body);
 }
 
 /* Contact Section */
 .contactSection {
   padding: 80px 0;
-  background: var(--dark);
+  background: var(--bg-primary);
 }
 
 .contactGrid {
@@ -152,14 +184,15 @@
 }
 
 .contactCard {
-  background: var(--gradient-card);
+  background: var(--bg-card);
   padding: 30px 20px;
-  border-radius: 20px;
+  border-radius: 24px;
   text-align: center;
   border: 1px solid;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .contactCard::before {
@@ -169,7 +202,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(212,165,165,0.1), transparent);
   transition: left 0.5s;
 }
 
@@ -177,16 +210,21 @@
   left: 100%;
 }
 
+.contactCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-rose);
+}
+
 .contactIcon {
   width: 70px;
   height: 70px;
-  background: var(--primary);
+  background: var(--gradient-rose);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
 }
 
 .contactIcon i {
@@ -201,13 +239,14 @@
 .contactCard h3 {
   font-size: 1.2rem;
   margin-bottom: 12px;
-  color: var(--text-light);
+  color: var(--text-primary);
+  font-family: var(--font-heading);
 }
 
 .contactNumber {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--accent-rose);
   margin-bottom: 20px;
   font-family: monospace;
 }
@@ -223,17 +262,18 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  border-radius: 25px;
+  border-radius: 50px;
   text-decoration: none;
   color: white;
   font-size: 0.8rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
+  font-family: var(--font-body);
 }
 
 .contactButton:hover {
   transform: translateX(5px);
-  filter: brightness(1.1);
+  filter: brightness(1.05);
 }
 
 .copyButton {
@@ -241,26 +281,28 @@
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  border-radius: 25px;
+  border-radius: 50px;
   background: transparent;
   border: 1px solid;
   cursor: pointer;
   font-size: 0.8rem;
   font-weight: 500;
-  transition: all 0.3s ease;
-  background: var(--dark-lighter);
-  color: var(--text-gray);
+  transition: all var(--transition-base);
+  background: var(--bg-soft);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
 }
 
 .copyButton:hover {
   transform: scale(1.05);
-  color: var(--primary);
+  color: var(--accent-rose);
+  border-color: var(--accent-rose);
 }
 
 /* Features Section */
 .featuresSection {
   padding: 80px 0;
-  background: var(--dark-lighter);
+  background: var(--bg-secondary);
 }
 
 .featuresGrid {
@@ -270,20 +312,21 @@
 }
 
 .featureCard {
-  background: var(--gradient-card);
+  background: var(--bg-card);
   padding: 35px 25px;
-  border-radius: 20px;
+  border-radius: 24px;
   text-align: center;
-  border: var(--border-gold);
+  border: var(--border-light);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
 }
 
 .featureCard:hover {
   transform: translateY(-8px);
-  border-color: var(--primary);
-  box-shadow: var(--shadow-gold);
+  border-color: var(--accent-rose);
+  box-shadow: var(--shadow-rose);
 }
 
 .featureIcon {
@@ -295,24 +338,26 @@
 .featureCard h3 {
   font-size: 1.2rem;
   margin-bottom: 12px;
-  color: var(--text-light);
+  color: var(--text-primary);
+  font-family: var(--font-heading);
 }
 
 .featureCard p {
-  color: var(--text-gray);
+  color: var(--text-secondary);
   font-size: 0.9rem;
   line-height: 1.5;
+  font-family: var(--font-body);
 }
 
 .featureGlow {
   position: absolute;
-  bottom: -30px;
+  bottom: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: var(--gradient-gold);
+  height: 3px;
+  background: var(--gradient-rose);
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-base);
 }
 
 .featureCard:hover .featureGlow {
@@ -322,17 +367,18 @@
 /* Response Section */
 .responseSection {
   padding: 80px 0;
-  background: var(--dark);
+  background: var(--bg-primary);
 }
 
 .responseContent {
-  background: var(--gradient-card);
+  background: var(--bg-card);
   padding: 50px;
   border-radius: 30px;
   text-align: center;
-  border: var(--border-gold);
+  border: var(--border-rose);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
 .responseContent::before {
@@ -342,7 +388,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(212,165,165,0.05) 0%, transparent 70%);
   animation: rotate 20s linear infinite;
 }
 
@@ -354,34 +400,41 @@
 .responseIcon {
   width: 80px;
   height: 80px;
-  background: rgba(212, 175, 55, 0.1);
+  background: var(--gradient-rose-light);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  border: var(--border-gold);
+  border: var(--border-rose);
+  position: relative;
+  z-index: 1;
 }
 
 .responseIcon i {
   font-size: 2.5rem;
-  color: var(--primary);
+  color: var(--accent-rose);
 }
 
 .responseContent h2 {
   font-size: 2rem;
   margin-bottom: 12px;
-  color: var(--text-light);
-  font-family: 'Playfair Display', serif;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  position: relative;
+  z-index: 1;
 }
 
 .responseContent p {
-  color: var(--text-gray);
+  color: var(--text-secondary);
   margin-bottom: 30px;
+  font-family: var(--font-body);
+  position: relative;
+  z-index: 1;
 }
 
 .responseContent p strong {
-  color: var(--primary);
+  color: var(--accent-rose);
 }
 
 .responseStats {
@@ -389,6 +442,8 @@
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 .responseStat {
@@ -397,7 +452,7 @@
 
 .responseStat i {
   font-size: 1.5rem;
-  color: var(--primary);
+  color: var(--accent-rose);
   display: block;
   margin-bottom: 8px;
 }
@@ -406,24 +461,24 @@
   display: block;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--text-light);
+  color: var(--text-primary);
   margin-bottom: 4px;
+  font-family: var(--font-body);
 }
 
 .responseStat small {
   font-size: 0.7rem;
-  color: var(--text-gray);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
 }
 
 /* CTA Section */
 .ctaSection {
   padding: 80px 0;
-  background: var(--gradient-dark);
+  background: var(--gradient-rose-light);
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-top: var(--border-gold);
-  border-bottom: var(--border-gold);
 }
 
 .ctaSection::before {
@@ -433,7 +488,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(212,175,55,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(212,165,165,0.15) 0%, transparent 70%);
 }
 
 .ctaContent {
@@ -443,15 +498,16 @@
 
 .ctaBadge {
   display: inline-block;
-  background: rgba(212, 175, 55, 0.15);
-  backdrop-filter: blur(10px);
+  background: rgba(212,165,165,0.85);
+  backdrop-filter: blur(4px);
   padding: 10px 24px;
   border-radius: 50px;
   font-size: 0.9rem;
   margin-bottom: 30px;
   font-weight: 700;
-  border: var(--border-gold);
-  color: var(--primary);
+  border: none;
+  color: white;
+  font-family: var(--font-body);
 }
 
 .ctaBadge i {
@@ -461,14 +517,15 @@
 .ctaSection h2 {
   font-size: 2.5rem;
   margin-bottom: 16px;
-  color: var(--text-light);
-  font-family: 'Playfair Display', serif;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
 }
 
 .ctaSection p {
-  color: var(--text-gray);
+  color: var(--text-secondary);
   margin-bottom: 32px;
   font-size: 1.1rem;
+  font-family: var(--font-body);
 }
 
 .ctaButtons {
@@ -480,40 +537,62 @@
 }
 
 .btnPrimary, .btnOutline {
-  padding: 14px 32px;
+  padding: 14px 36px;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  transition: all var(--transition-base);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
   letter-spacing: 0.5px;
+  font-family: var(--font-body);
+  position: relative;
+  overflow: hidden;
+}
+
+.btnPrimary::before, .btnOutline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.btnPrimary:hover::before, .btnOutline:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .btnPrimary {
-  background: var(--gradient-gold);
-  color: var(--dark);
+  background: var(--gradient-rose);
+  color: white;
   border: none;
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-rose);
+  font-weight: 600;
 }
 
 .btnPrimary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 25px rgba(212,165,165,0.4);
 }
 
 .btnOutline {
   background: transparent;
-  color: var(--text-light);
-  border: 2px solid var(--primary);
+  color: var(--accent-rose);
+  border: 1.5px solid var(--accent-rose);
 }
 
 .btnOutline:hover {
-  background: var(--primary);
-  color: var(--dark);
+  background: var(--accent-rose);
+  color: white;
   transform: translateY(-2px);
 }
 
@@ -522,14 +601,17 @@
   align-items: center;
   gap: 10px;
   padding: 12px 24px;
-  background: rgba(212, 175, 55, 0.1);
+  background: var(--bg-card);
   border-radius: 50px;
-  color: var(--text-gray);
+  color: var(--text-secondary);
   font-size: 0.85rem;
+  box-shadow: var(--shadow-sm);
+  border: var(--border-light);
+  font-family: var(--font-body);
 }
 
 .ctaNote i {
-  color: var(--primary);
+  color: var(--accent-rose);
 }
 
 /* Responsive Design */
@@ -551,7 +633,7 @@
   }
   
   .sectionHeader h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -592,6 +674,7 @@
   
   .ctaButtons {
     flex-direction: column;
+    align-items: center;
   }
   
   .btnPrimary, .btnOutline {
@@ -600,7 +683,7 @@
   }
   
   .sectionHeader h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
   
   .ctaSection h2 {
@@ -609,10 +692,12 @@
   
   .contactActions {
     flex-direction: column;
+    align-items: center;
   }
   
   .contactButton, .copyButton {
     justify-content: center;
+    width: 100%;
   }
 }
 
@@ -632,5 +717,23 @@
   
   .contactNumber {
     font-size: 0.9rem;
+  }
+  
+  .pageHeader h1 {
+    font-size: 1.5rem;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 1.5rem;
+  }
+  
+  .ctaBadge {
+    font-size: 0.7rem;
+  }
+  
+  .ctaNote {
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+    text-align: center;
   }
 }

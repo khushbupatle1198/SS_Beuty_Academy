@@ -201,7 +201,7 @@ export default function Home() {
   const glowVariants = {
     hover: {
       scale: 1.05,
-      boxShadow: "0 0 30px rgba(212, 175, 55, 0.3)",
+      boxShadow: "0 0 30px rgba(201, 168, 124, 0.3)",
       transition: { duration: 0.3 }
     }
   }
@@ -377,7 +377,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <span className={styles.sectionBadge}>Popular Courses</span>
-            <h2>Choose Your <span className={styles.goldText}>Path to Success</span></h2>
+            <h2>Choose Your <span className={styles.primaryText}>Path to Success</span></h2>
             <p>Industry-focused courses designed to make you a professional makeup artist</p>
           </motion.div>
 
@@ -453,7 +453,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <span className={styles.sectionBadge}>Your Mentor</span>
-            <h2>Learn from Industry <span className={styles.goldText}>Expert</span></h2>
+            <h2>Learn from Industry <span className={styles.primaryText}>Expert</span></h2>
           </motion.div>
           <div className={styles.trainerGrid}>
             <motion.div
@@ -513,7 +513,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <span className={styles.sectionBadge}>Student Testimonials</span>
-            <h2>What Our <span className={styles.goldText}>Students</span> Say</h2>
+            <h2>What Our <span className={styles.primaryText}>Students</span> Say</h2>
             <p>Join 1000+ successful makeup artists who started their journey with us</p>
           </motion.div>
           <motion.div 
@@ -593,7 +593,7 @@ export default function Home() {
               transition={{ delay: 0.3 }}
               viewport={{ once: true }}
             >
-              Start Your Career <span className={styles.goldText}>Transformation</span> 🚀
+              Start Your Career <span className={styles.primaryText}>Transformation</span> 🚀
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
