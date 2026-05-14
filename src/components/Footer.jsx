@@ -191,7 +191,14 @@ export default function Footer() {
         <div className={styles.container}>
           <div className={styles.bottomContent}>
             <p>&copy; {currentYear} SS Beauty Academy. All rights reserved.</p>
-            <p className={styles.credit}>Crafted with <i className="fas fa-heart"></i> by Sonali Solanke</p>
+            <p className={styles.credit}>Crafted with <i className="fas fa-heart"></i> by <a 
+              href="https://sujitmportfolio.netlify.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={styles.developerLink}
+            >
+              Sujit Manapure
+            </a></p>
           </div>
         </div>
       </div>
